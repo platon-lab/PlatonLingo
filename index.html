@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlatonLingo — Вивчай Англійську</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  ЕКРАН 1: ВИБІР ПЕРСОНАЖА                 -->
+  <!-- ══════════════════════════════════════════ -->
+  <div id="screen-character" class="screen active">
+    <div class="screen-inner">
+      <div class="logo-badge">PlatonLingo</div>
+      <h1 class="hero-title">Вивчай Англійську<br><span>із задоволенням!</span></h1>
+      <p class="subtitle">Обери свого супутника у подорожі знань</p>
+
+      <div class="character-grid">
+        <!-- Кожна картка персонажа -->
+        <div class="char-card" data-char="Tito">
+          <div class="char-avatar">
+            <img src="images/Tito.png" alt="Tito" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">❤️</div>
+          </div>
+          <div class="char-name">Tito</div>
+          <div class="char-desc">Хитрий та швидкий</div>
+        </div>
+        <div class="char-card" data-char="Smartik">
+          <div class="char-avatar">
+            <img src="images/Smartik.png" alt="Smartik" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">🧡</div>
+          </div>
+          <div class="char-name">Smartik</div>
+          <div class="char-desc">Розумний ботанік</div>
+        </div>
+        <div class="char-card" data-char="Junior">
+          <div class="char-avatar">
+            <img src="images/Junior.png" alt="Junior" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">💛</div>
+          </div>
+          <div class="char-name">Junior</div>
+          <div class="char-desc">Молодий та завзятий</div>
+        </div>
+        <div class="char-card" data-char="Fil">
+          <div class="char-avatar">
+            <img src="images/Fil.png" alt="Fil" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">💚</div>
+          </div>
+          <div class="char-name">Fil</div>
+          <div class="char-desc">Мудрий та терплячий</div>
+        </div>
+        <div class="char-card" data-char="Milka">
+          <div class="char-avatar">
+            <img src="images/Milka.png" alt="Milka" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">💙</div>
+          </div>
+          <div class="char-name">Milka</div>
+          <div class="char-desc">Добра та творча</div>
+        </div>
+        <div class="char-card" data-char="Bark">
+          <div class="char-avatar">
+            <img src="images/Bark.png" alt="Bark" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">💜</div>
+          </div>
+          <div class="char-name">Bark</div>
+          <div class="char-desc">Вірний та енергійний</div>
+        </div>
+      </div>
+
+      <button id="btn-choose-char" class="btn-primary" disabled>Далі →</button>
+    </div>
+
+    <!-- Декоративні кульки -->
+    <div class="bg-blob blob1"></div>
+    <div class="bg-blob blob2"></div>
+    <div class="bg-blob blob3"></div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  ЕКРАН 2: ВИБІР РІВНЯ                     -->
+  <!-- ══════════════════════════════════════════ -->
+  <div id="screen-level" class="screen">
+    <div class="screen-inner">
+      <button class="btn-back" id="btn-back-level">← Назад</button>
+
+      <div class="selected-char-preview">
+        <div class="preview-avatar">
+          <img id="preview-img" src="" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div id="preview-emoji" class="char-emoji-fallback" style="display:none">🦊</div>
+        </div>
+        <div>
+          <div class="preview-hello">Привіт! Я <span id="preview-name"></span></div>
+          <div class="preview-sub">Готовий навчатись разом!</div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Обери рівень</h2>
+
+      <div class="level-grid">
+        <div class="level-card" data-level="A1">
+          <div class="level-badge">A1</div>
+          <div class="level-title">Початківець</div>
+          <div class="level-desc">Прості слова: кольори, числа, їжа</div>
+          <div class="level-stars">⭐</div>
+        </div>
+        <div class="level-card" data-level="A2">
+          <div class="level-badge">A2</div>
+          <div class="level-title">Елементарний</div>
+          <div class="level-desc">Сім'я, дім, щоденне життя</div>
+          <div class="level-stars">⭐⭐</div>
+        </div>
+        <div class="level-card" data-level="B1">
+          <div class="level-badge">B1</div>
+          <div class="level-title">Середній</div>
+          <div class="level-desc">Робота, подорожі, культура</div>
+          <div class="level-stars">⭐⭐⭐</div>
+        </div>
+        <div class="level-card" data-level="B2">
+          <div class="level-badge">B2</div>
+          <div class="level-title">Вище середнього</div>
+          <div class="level-desc">Наука, суспільство, технології</div>
+          <div class="level-stars">⭐⭐⭐⭐</div>
+        </div>
+        <div class="level-card" data-level="C1">
+          <div class="level-badge">C1</div>
+          <div class="level-title">Просунутий</div>
+          <div class="level-desc">Академічна та ділова лексика</div>
+          <div class="level-stars">⭐⭐⭐⭐⭐</div>
+        </div>
+        <div class="level-card" data-level="C2">
+          <div class="level-badge">C2</div>
+          <div class="level-title">Майстер</div>
+          <div class="level-desc">Рідкісні та складні слова</div>
+          <div class="level-stars">⭐⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+
+      <button id="btn-start-game" class="btn-primary" disabled>Почати гру! 🚀</button>
+    </div>
+    <div class="bg-blob blob1"></div>
+    <div class="bg-blob blob4"></div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  ЕКРАН 3: ГОЛОВНА ГРА                     -->
+  <!-- ══════════════════════════════════════════ -->
+  <div id="screen-game" class="screen">
+
+    <!-- Шапка гри -->
+    <header class="game-header">
+      <div class="game-char-mini">
+        <img id="game-char-img" src="" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div id="game-char-emoji" class="char-emoji-fallback mini" style="display:none">❤️</div>
+      </div>
+
+      <div class="game-stats">
+        <div class="stat-block">
+          <span class="stat-icon">🏆</span>
+          <span class="stat-label">Бали</span>
+          <span class="stat-val" id="stat-score">0</span>
+        </div>
+        <div class="stat-block streak-block">
+          <span class="stat-icon">🔥</span>
+          <span class="stat-label">Серія</span>
+          <span class="stat-val" id="stat-streak">0</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-icon">🥇</span>
+          <span class="stat-label">Рекорд</span>
+          <span class="stat-val" id="stat-best">0</span>
+        </div>
+      </div>
+
+      <div class="game-controls-top">
+        <button class="btn-mini" id="btn-change-char" title="Змінити персонажа">👤</button>
+        <button class="btn-mini" id="btn-change-level" title="Змінити рівень">📊</button>
+      </div>
+    </header>
+
+    <!-- Прогрес-бар -->
+    <div class="progress-wrap">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <span class="progress-label" id="progress-label">0 / 10</span>
+    </div>
+
+    <!-- Картка слова -->
+    <main class="game-main">
+      <div class="word-card" id="word-card">
+        <div class="word-level-tag" id="word-level-tag">A1</div>
+        <div class="word-english" id="word-english">apple</div>
+        <div class="word-hint" id="word-hint"></div>
+      </div>
+
+      <!-- Зона вводу -->
+      <div class="input-zone">
+        <div class="input-wrap">
+          <input
+            type="text"
+            id="answer-input"
+            class="answer-input"
+            placeholder="Введи переклад українською..."
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+          />
+          <button class="btn-hint-icon" id="btn-hint" title="Підказка">💡</button>
+        </div>
+        <button class="btn-check" id="btn-check">Перевірити ✓</button>
+      </div>
+
+      <!-- Результат відповіді -->
+      <div class="answer-result" id="answer-result">
+        <div class="result-icon" id="result-icon"></div>
+        <div class="result-text" id="result-text"></div>
+        <div class="result-correct" id="result-correct"></div>
+        <button class="btn-next" id="btn-next">Далі →</button>
+      </div>
+
+      <!-- Персонаж у грі -->
+      <div class="game-mascot" id="game-mascot">
+        <img id="mascot-img" src="" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div id="mascot-emoji" class="char-emoji-fallback mascot" style="display:none">❤️</div>
+        <div class="mascot-bubble" id="mascot-bubble"></div>
+      </div>
+    </main>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  ЕКРАН 4: РЕЗУЛЬТАТИ (після 10 слів)      -->
+  <!-- ══════════════════════════════════════════ -->
+  <div id="screen-result" class="screen">
+    <div class="screen-inner result-inner">
+      <div class="result-char">
+        <img id="result-char-img" src="" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div id="result-char-emoji" class="char-emoji-fallback big" style="display:none">❤️</div>
+      </div>
+      <div class="confetti-wrap" id="confetti-wrap"></div>
+
+      <h2 id="result-headline" class="result-headline">Раунд завершено!</h2>
+      <div class="result-score-big" id="result-score-big">0</div>
+      <div class="result-stats-row">
+        <div class="r-stat"><span>✅</span><b id="r-correct">0</b><small>правильно</small></div>
+        <div class="r-stat"><span>❌</span><b id="r-wrong">0</b><small>неправильно</small></div>
+        <div class="r-stat"><span>🔥</span><b id="r-best-streak">0</b><small>серія</small></div>
+      </div>
+      <div class="record-badge" id="record-badge" style="display:none">🏆 Новий рекорд!</div>
+
+      <div class="result-btns">
+        <button class="btn-primary" id="btn-play-again">Ще раз 🔄</button>
+        <button class="btn-secondary" id="btn-change-level-res">Змінити рівень</button>
+      </div>
+    </div>
+    <div class="bg-blob blob1"></div>
+    <div class="bg-blob blob5"></div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  ТОСТ-ПОВІДОМЛЕННЯ                        -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="toast" id="toast"></div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
