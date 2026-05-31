@@ -6,6 +6,49 @@
   <title>PlatonLingo — Вивчай Англійську</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet" />
+  <style>
+    /* Покращення інтерфейсу та забезпечення зручного гортання героїв */
+    .character-grid {
+      max-height: 480px; /* Фіксована висота для створення області прокрутки */
+      overflow-y: auto;  /* Дозволяє гортати вниз і вгору */
+      padding: 15px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      box-shadow: inset 0 4px 12px rgba(0,0,0,0.05);
+      border: 2px solid rgba(255,255,255,0.5);
+      scroll-behavior: smooth;
+    }
+    /* Стильний кастомний скролбар */
+    .character-grid::-webkit-scrollbar {
+      width: 8px;
+    }
+    .character-grid::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+    }
+    .character-grid::-webkit-scrollbar-thumb {
+      background: #ffc107;
+      border-radius: 10px;
+    }
+    .character-grid::-webkit-scrollbar-thumb:hover {
+      background: #ff9800;
+    }
+    /* Додаткова соковита анімація для покращення геймплею */
+    .char-card {
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+    }
+    .char-card:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .char-card.selected {
+      border-color: #ff9800 !important;
+      background: #fff3e0 !important;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
 
@@ -16,10 +59,10 @@
     <div class="screen-inner">
       <div class="logo-badge">PlatonLingo</div>
       <h1 class="hero-title">Вивчай Англійську<br><span>із задоволенням!</span></h1>
-      <p class="subtitle">Обери свого супутника у подорожі знань</p>
+      <p class="subtitle">Обери свого супутника у подорожі знань (гортай вниз/вгору)</p>
 
       <div class="character-grid">
-        <!-- Кожна картка персонажа -->
+        <!-- Оригінальні 6 героїв -->
         <div class="char-card" data-char="Tito">
           <div class="char-avatar">
             <img src="images/Tito.png" alt="Tito" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
@@ -67,6 +110,120 @@
           </div>
           <div class="char-name">Bark</div>
           <div class="char-desc">Вірний та енергійний</div>
+        </div>
+
+        <!-- 14 Нових Унікальних Героїв -->
+        <div class="char-card" data-char="Persik">
+          <div class="char-avatar">
+            <img src="images/Persik.png" alt="Persik" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">❤️</div>
+          </div>
+          <div class="char-name">Persik</div>
+          <div class="char-desc">Ніжний та пухнастий</div>
+        </div>
+        <div class="char-card" data-char="Spike">
+          <div class="char-avatar">
+            <img src="images/Spike.png" alt="Spike" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">🧡</div>
+          </div>
+          <div class="char-name">Spike</div>
+          <div class="char-desc">Крутий та драйвовий</div>
+        </div>
+        <div class="char-card" data-char="Alyonka">
+          <div class="char-avatar">
+            <img src="images/Alyonka.png" alt="Alyonka" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">💛</div>
+          </div>
+          <div class="char-name">Alyonka</div>
+          <div class="char-desc">Завжди на позитиві</div>
+        </div>
+        <div class="char-card" data-char="Lilu">
+          <div class="char-avatar">
+            <img src="images/Lilu.png" alt="Lilu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">💚</div>
+          </div>
+          <div class="char-name">Lilu</div>
+          <div class="char-desc">Космічна мандрівниця</div>
+        </div>
+        <div class="char-card" data-char="Manya">
+          <div class="char-avatar">
+            <img src="images/Manya.png" alt="Manya" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">💙</div>
+          </div>
+          <div class="char-name">Manya</div>
+          <div class="char-desc">Граційне кошеня</div>
+        </div>
+        <div class="char-card" data-char="Liza">
+          <div class="char-avatar">
+            <img src="images/Liza.png" alt="Liza" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">💜</div>
+          </div>
+          <div class="char-name">Liza</div>
+          <div class="char-desc">Стильна та витончена</div>
+        </div>
+        <div class="char-card" data-char="Grivna">
+          <div class="char-avatar">
+            <img src="images/Grivna.png" alt="Grivna" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">❤️</div>
+          </div>
+          <div class="char-name">Grivna</div>
+          <div class="char-desc">Приносить удачу й успіх</div>
+        </div>
+        <div class="char-card" data-char="Ben">
+          <div class="char-avatar">
+            <img src="images/Ben.png" alt="Ben" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">🧡</div>
+          </div>
+          <div class="char-name">Ben</div>
+          <div class="char-desc">Сильний та надійний</div>
+        </div>
+        <div class="char-card" data-char="Goldi">
+          <div class="char-avatar">
+            <img src="images/Goldi.png" alt="Goldi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">💛</div>
+          </div>
+          <div class="char-name">Goldi</div>
+          <div class="char-desc">Сяє яскравіше за всіх</div>
+        </div>
+        <div class="char-card" data-char="Raf">
+          <div class="char-avatar">
+            <img src="images/Raf.png" alt="Raf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">💚</div>
+          </div>
+          <div class="char-name">Raf</div>
+          <div class="char-desc">Затишний та спокійний</div>
+        </div>
+        <div class="char-card" data-char="Veles">
+          <div class="char-avatar">
+            <img src="images/Veles.png" alt="Veles" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">💙</div>
+          </div>
+          <div class="char-name">Veles</div>
+          <div class="char-desc">Охоронець давніх таємниць</div>
+        </div>
+        <div class="char-card" data-char="Masha">
+          <div class="char-avatar">
+            <img src="images/Masha.png" alt="Masha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">💜</div>
+          </div>
+          <div class="char-name">Masha</div>
+          <div class="char-desc">Непосидюча дослідниця</div>
+        </div>
+        <div class="char-card" data-char="Brilliantik">
+          <div class="char-avatar">
+            <img src="images/Brilliantik.png" alt="Brilliantik" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">❤️</div>
+          </div>
+          <div class="char-name">Brilliantik</div>
+          <div class="char-desc">Має гострий та чистий розум</div>
+        </div>
+        <div class="char-card" data-char="Richik">
+          <div class="char-avatar">
+            <img src="images/Richik.png" alt="Richik" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="char-emoji-fallback" style="display:none">🧡</div>
+          </div>
+          <div class="char-name">Richik</div>
+          <div class="char-desc">Хоробрий та відважний лідер</div>
         </div>
       </div>
 
